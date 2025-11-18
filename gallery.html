@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Good Homes Luxury PG</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-green": "#387034",
+              "light-tan": "#EDEAE5",
+              "text-dark": "#333333",
+              "findus-color": "#785740",
+              "contact-color": "#264653",
+            },
+          },
+        },
+      };
+    </script>
+    
+    <style>
+        .gallery-hero {
+            background-image: url('images/outlook.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 60vh; 
+            position: relative;
+        }
+
+        /* Ensure .gallery-card images are visible by default and only transform on hover */
+        .gallery-card img {
+            display: block;
+            width: 100%;
+        }
+
+        /* Add a simple layout style for the full gallery grid */
+        .full-gallery-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    </style>
+  </head>
+
+  <body class="bg-light-tan font-inter text-text-dark scroll-smooth">
+    <div class="mobile-menu-overlay"></div>
+
+    <header class="sticky top-0 z-50 bg-white shadow-lg px-4 md:px-6 py-3 md:py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#top" class="flex items-center space-x-3 group">
+          <img
+            src="images/logo.jpg"
+            alt="Good Homes Logo"
+            class="h-12 md:h-10"
+            id="nav-logo"
+          />
+          <div class="flex items-end space-x-2">
+            <span
+              class="text-xl md:text-2xl font-bold text-text-dark uppercase tracking-wider group-hover:text-primary-green transition duration-300"
+              >GOOD HOMES</span
+            >
+            <span
+              class="text-xs text-text-dark opacity-80 pt-1 hidden sm:block group-hover:text-primary-green transition duration-300"
+              >A Luxury PG</span
+            >
+          </div>
+        </a>
+        <nav
+          class="hidden md:flex space-x-8 text-sm font-semibold text-text-dark mx-auto"
+        >
+          <a href="index.html#home" class="nav-link relative">HOME</a>
+          <a href="index.html#about" class="nav-link relative">ABOUT</a>
+          <a href="gallery.html" class="nav-link relative active-nav"
+            >GALLERY</a
+          >
+          <a href="index.html#rooms" class="nav-link relative">ROOMS</a>
+          <a href="index.html#contact" class="nav-link relative">CONTACT</a>
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden p-2 text-text-dark focus:outline-none"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 h-full w-2/3 bg-white shadow-xl flex flex-col pt-20 px-6 md:hidden"
+    >
+      <a
+        href="index.html#home"
+        class="mobile-nav-link py-3 border-b border-gray-100 hover:text-primary-green"
+        >HOME</a
+      >
+
+      <a
+        href="index.html#about"
+        class="mobile-nav-link py-3 border-b border-gray-100 hover:text-primary-green"
+        >ABOUT</a
+      >
+
+      <a
+        href="gallery.html"
+        class="mobile-nav-link py-3 border-b border-gray-100 text-primary-green font-bold"
+        >GALLERY</a
+      >
+
+      <a
+        href="index.html#rooms"
+        class="mobile-nav-link py-3 border-b border-gray-100 hover:text-primary-green"
+        >ROOMS</a
+      >
+
+      <a href="index.html#contact" class="mobile-nav-link py-3 hover:text-primary-green"
+        >CONTACT</a
+      >
+    </div>
+
+    <section
+      id="gallery-hero"
+      class="gallery-hero flex items-center justify-center text-center"
+    >
+      
+      <div class="relative max-w-4xl px-4">
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-2 uppercase tracking-wider"
+        >
+          Our <span class="text-light-tan">Space</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white font-medium opacity-90">
+            See the premium lifestyle you'll enjoy at Good Homes.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section
+      class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <h2
+        class="text-3xl md:text-4xl font-extrabold text-text-dark text-center mb-12"
+      >
+        A Look Inside Good Homes
+      </h2>
+
+      <div class="grid full-gallery-grid gap-6 md:gap-8">
+
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/outlook.jpg"
+            alt="Beautiful exterior view of the Good Homes building"
+          />
+          <div><p class="text-lg">The Good Homes Exterior</p></div>
+        </div>
+
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/roomview2.jpg"
+            alt="Spacious shared double room"
+          />
+          <div><p class="text-lg">Spacious Double Occupancy Room</p></div>
+        </div>
+        
+        <div class="gallery-card h-[300px] shadow-xl">
+            <img
+              src="images/roomview.jpg"
+              alt="Modern interior of a PG room or 1RK"
+            />
+            <div><p class="text-lg">Private 1RK / Single Room Setup</p></div>
+          </div>
+
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/hall2.jpg"
+            alt="Cozy lounge area"
+          />
+          <div><p class="text-lg">Cozy Common Hall / Lounge</p></div>
+        </div>
+
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/table.jpg"
+            alt="Study table and chair"
+          />
+          <div><p class="text-lg">Dedicated Study Space in Room</p></div>
+        </div>
+        
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/kitchen2.jpg"
+            alt="Modern Kitchenette"
+          />
+          <div><p class="text-lg">Rooms with Kitchenette Facility</p></div>
+        </div>
+
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/bathroom2.jpg"
+            alt="Modern attached bathroom"
+          />
+          <div><p class="text-lg">Clean & Modern Attached Bathrooms</p></div>
+        </div>
+
+        <div class="gallery-card h-[300px] shadow-xl">
+            <img
+              src="images/parking.jpg"
+              alt="Security and Parking"
+            />
+            <div><p class="text-lg">Secure Parking & Biometric Entry</p></div>
+          </div>
+          
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/lift.jpg"
+            alt="Lift/Elevator area"
+          />
+          <div><p class="text-lg">Access to all Floors via Lift</p></div>
+        </div>
+        
+        <div class="gallery-card h-[300px] shadow-xl">
+            <img
+              src="images/hall.jpg"
+              alt="Hallway or 1 BHK Interior"
+            />
+            <div><p class="text-lg">Beautifully Maintained Interiors</p></div>
+          </div>
+
+          <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/outlook2.jpg"
+            alt="hall+bedroom"
+          />
+          <div><p class="text-lg">Outside of Good Homes</p></div>
+        </div>
+
+        <div class="gallery-card h-[300px] shadow-xl">
+          <img
+            src="images/balcony.jpg"
+            alt="balcony"
+          />
+          <div><p class="text-lg">Balcony</p></div>
+        </div>
+
+      </div>
+      
+      <div class="text-center mt-12">
+        <a
+  href="index.html#contact"
+  class="cta-button inline-block bg-[#916B58] text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-[#785740] transition duration-300"
+>
+  BOOK YOUR VIEWING NOW
+</a>
+      </div>
+
+    </section>
+
+    <hr />
+
+    <footer
+      class="text-center py-6 border-t border-gray-200 text-sm text-gray-500 bg-white"
+    >
+      © 2026 Good Homes Official - Design and developed by
+      <a href="https://indzone.in/"><b>Indzone.</b></a>
+    </footer>
+
+    <a
+      href="https://wa.me/9667942934"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+      lucide.createIcons();
+      document.getElementById('mobile-menu-button').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('open');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobile-menu').classList.remove('open');
+        });
+      });
+    </script>
+  </body>
+</html>
