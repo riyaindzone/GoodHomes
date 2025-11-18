@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Good Homes - A Luxury PG</title>
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-green": "#387034",
+
+              "light-tan": "#EDEAE5",
+
+              "text-dark": "#333333",
+
+              "findus-color": "#785740",
+
+              "contact-color": "#264653",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-light-tan font-inter text-text-dark scroll-smooth">
+    <div class="mobile-menu-overlay"></div>
+    <!-- Header -->
+
+    <header class="sticky top-0 z-50 bg-white shadow-lg p-4 md:p-6">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <span
+            class="text-xl md:text-2xl font-bold text-text-dark uppercase tracking-wider"
+            >GOOD HOMES</span
+          >
+
+          <span class="text-xs text-text-dark opacity-80 pt-1 hidden sm:block"
+            >A Luxury PG</span
+          >
+        </div>
+
+        <nav
+          class="hidden md:flex space-x-8 text-sm font-semibold text-text-dark"
+        >
+          <a href="#home" class="nav-link relative">HOME</a>
+
+          <a href="#about" class="nav-link relative">ABOUT</a>
+
+          <a href="#rooms" class="nav-link relative">ROOMS</a>
+
+          <a href="#contact" class="nav-link relative">CONTACT</a>
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden p-2 text-text-dark focus:outline-none"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 h-full w-2/3 bg-white shadow-xl flex flex-col pt-20 px-6 md:hidden"
+    >
+      <a
+        href="#home"
+        class="mobile-nav-link py-3 border-b border-gray-100 hover:text-primary-green"
+        >HOME</a
+      >
+
+      <a
+        href="#about"
+        class="mobile-nav-link py-3 border-b border-gray-100 hover:text-primary-green"
+        >ABOUT</a
+      >
+
+      <a
+        href="#rooms"
+        class="mobile-nav-link py-3 border-b border-gray-100 hover:text-primary-green"
+        >ROOMS</a
+      >
+
+      <a href="#contact" class="mobile-nav-link py-3 hover:text-primary-green"
+        >CONTACT</a
+      >
+    </div>
+
+    <!-- Hero -->
+
+    <section
+      id="home"
+      class="hero-section flex items-center justify-center text-center"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+
+      <div class="relative max-w-4xl px-4">
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4"
+        >
+          Not Just a PG, <br class="md:hidden" />It's a Lifestyle! ✨
+        </h1>
+
+        <a
+          href="#contact"
+          class="cta-button inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-orange-600 transition duration-300"
+          >BOOK NOW</a
+        >
+      </div>
+    </section>
+
+    <!-- About -->
+
+    <section
+      id="about"
+      class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+    >
+      <h2
+        class="slide-in-left text-3xl md:text-4xl font-semibold mb-3 text-text-dark"
+      >
+        Welcome to GOOD HOMES
+      </h2>
+
+      <p
+        class="slide-in-right text-lg md:text-xl text-primary-green font-light"
+      >
+        Premium, Modern, Hassle-free.
+      </p>
+    </section>
+
+    <!-- Accommodation -->
+
+    <section
+      id="rooms"
+      class="fade-in-element pb-16 md:pb-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <h3
+        class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-10 border-b-2 border-primary-green inline-block pb-1"
+      >
+        ACCOMMODATION
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="rounded-xl overflow-hidden shadow-2xl h-full">
+          <img
+            src="images/roomview.jpg"
+            alt="Modern interior of a PG room or 1RK"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div
+          class="bg-white p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300"
+        >
+          <h4 class="text-2xl font-bold mb-4">PG Room / 1 RK Comfort</h4>
+
+          <ul class="text-gray-700 space-y-2 text-sm md:text-base mb-6">
+            <li>★ Fully Furnished & Styled</li>
+            <li>★ <span class="font-bold">High-Speed Wi-Fi</span> Included</li>
+            <li>
+              ★ <span class="font-bold">24/7</span> Water & Electricity Supply
+            </li>
+            <li>★ <span class="font-bold">Housekeeping Services</span></li>
+            <li>★ Secure, Peaceful Environment</li>
+          </ul>
+
+          <a
+            href="#contact"
+            class="inline-block mt-4 py-2 px-6 text-lg font-extrabold text-white bg-primary-green rounded-lg shadow-md hover:bg-green-700 transition duration-300"
+          >
+            Contact For Pricing
+          </a>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-2xl h-full">
+          <img
+            src="images/hall.jpg"
+            alt="Interior of a 1 BHK apartment"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div
+          class="bg-white p-6 md:p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300"
+        >
+          <h4 class="text-2xl font-bold mb-4">1 BHK Modern Apartments</h4>
+
+          <ul class="text-gray-700 space-y-2 text-sm md:text-base mb-6">
+            <li>★ Perfectly Sized, Beautifully Styled</li>
+            <li>
+              ★ <span class="font-bold">Security & CCTV</span> Surveillance
+            </li>
+            <li>★ Stunning Rooftop Chill Zone</li>
+            <li>
+              ★ <span class="font-bold">High-Speed Wi-Fi</span> & Housekeeping
+            </li>
+            <li>★ Affordable Monthly Rentals</li>
+          </ul>
+
+          <a
+            href="#contact"
+            class="inline-block mt-4 py-2 px-6 text-lg font-extrabold text-white bg-primary-green rounded-lg shadow-md hover:bg-green-700 transition duration-300"
+          >
+            Contact For Pricing
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities & Security -->
+
+    <section
+      class="fade-in-element pb-20 md:pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <!-- Included Amenities -->
+
+      <h3
+        class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-10 border-b-2 border-primary-green inline-block pb-1"
+      >
+        Included Amenities
+      </h3>
+
+      <p class="text-gray-600 mb-10 text-center max-w-2xl mx-auto">
+        Experience modern comfort with all the essentials you need for a
+        stress-free stay.
+      </p>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8"
+      >
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="wifi"></i></div>
+
+          <p class="font-medium mt-2">High-Speed Wi-Fi</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="utensils-crossed"></i></div>
+
+          <p class="font-medium mt-2">Dining Area</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="snowflake"></i></div>
+
+          <p class="font-medium mt-2">Air Conditioning</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="shirt"></i></div>
+
+          <p class="font-medium mt-2">Laundry Service</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="tv"></i></div>
+
+          <p class="font-medium mt-2">Entertainment Lounge</p>
+        </div>
+      </div>
+
+      <div
+        class="w-24 h-1 bg-primary-green mx-auto my-14 rounded-full opacity-70"
+      ></div>
+
+      <!-- Security -->
+
+      <h3
+        class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-10 border-b-2 border-primary-green inline-block pb-1"
+      >
+        Security & Features
+      </h3>
+
+      <p class="text-gray-600 mb-10 text-center max-w-2xl mx-auto">
+        Your safety and peace of mind are our top priorities, with 24/7 secure
+        systems and advanced facilities.
+      </p>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
+      >
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="lock"></i></div>
+
+          <p class="font-medium mt-2">Biometric Entry</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="camera"></i></div>
+
+          <p class="font-medium mt-2">24×7 CCTV</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="bell"></i></div>
+
+          <p class="font-medium mt-2">Emergency Alert System</p>
+        </div>
+
+        <div class="amenity-card group">
+          <div class="icon-wrapper"><i data-lucide="shield"></i></div>
+
+          <p class="font-medium mt-2">Guard on Duty</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+      <h3
+        class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-8 border-b-2 border-primary-green inline-block pb-1"
+      >
+        Gallery
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-3 h-[400px]"
+        >
+          <img
+            src="images/outlook.jpg"
+            alt="Beautiful exterior view of the Good Homes building"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p class="text-xl font-semibold">
+              Welcome to your luxury Good Home.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-2"
+        >
+          <img
+            src="images/roomview2.jpg"
+            alt="Shared double room"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>Spacious, premium shared rooms (Double Occupancy).</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-1"
+        >
+          <img
+            src="images/table.jpg"
+            alt="StudyTable"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>Rooms with study tables.</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-1"
+        >
+          <img
+            src="images/kitchen2.jpg"
+            alt="Home-style meals"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>Rooms with Kitchens.</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-1"
+        >
+          <img
+            src="images/hall2.jpg"
+            alt="Cozy lounge area"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>Relax, study, or socialize in our cozy halls.</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-1"
+        >
+          <img
+            src="images/lift.jpg"
+            alt="Dedicated study area"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>Floors with lifts.</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-1"
+        >
+          <img
+            src="images/bathroom2.jpg"
+            alt="Modern attached bathroom"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>Clean & modern attached bathrooms with all features.</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-card relative overflow-hidden rounded-xl shadow-2xl md:col-span-2"
+        >
+          <img
+            src="images/parking.jpg"
+            alt="Security features"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-center p-4"
+          >
+            <p>24/7 CCTV and secure biometric entry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section
+      id="contact"
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28"
+    >
+      <h3
+        class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-8 border-b-2 border-primary-green inline-block pb-1"
+      >
+        Contact & Location
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+        <div>
+          <h4
+            class="text-lg md:text-xl font-semibold find-us mb-2 border-b-2 border-[var(--findus-color)] inline-block pb-1"
+          >
+            Find Us Here
+          </h4>
+
+          <p class="text-text-dark mb-4 mt-2 leading-relaxed">
+            <strong>Good homes,</strong> <br />House no 192, Sector 39, near
+            Medanta Hospital, Gurgaon, <br />
+            Haryana 122001.
+          </p>
+
+          <div class="rounded-xl overflow-hidden shadow-2xl h-64 md:h-80 mt-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3508.1703635863896!2d77.04352117549392!3d28.44428037576811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI2JzM5LjQiTiA3N8KwMDInNDYuMCJF!5e0!3m2!1sen!2sin!4v1763354988414!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <div>
+          <h4
+            class="text-lg md:text-xl font-semibold contact-title mb-2 border-b-2 border-[var(--contact-color)] inline-block pb-1"
+          >
+            Get In Touch
+          </h4>
+
+          <p class="ml-0">
+            <a
+              href="tel:+919667942934"
+              class="text-text-dark hover:text-primary-green transition duration-300"
+            >
+              📞 +91-9667942934
+            </a>
+          </p>
+
+          <p class="ml-0">
+            <a
+              href="mailto:hello@goodhomesofficial.com"
+              class="text-text-dark hover:text-primary-green transition duration-300"
+            >
+              📧 hello@goodhomesofficial.com
+            </a>
+          </p>
+
+          <h4
+            class="mt-8 text-lg md:text-xl font-semibold connect-title mb-2 border-b-2 border-[var(--contact-color)] inline-block pb-1"
+          >
+            Connect with Us
+          </h4>
+
+          <p class="ml-0">
+            <a
+              href="https://www.instagram.com/goodhomesofficial"
+              target="_blank"
+              class="text-text-dark hover:text-primary-green transition duration-300"
+            >
+              <i class="fab fa-instagram"></i>
+              @goodhomesofficial
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="text-center py-6 border-t border-gray-200 text-sm text-gray-500 bg-white"
+    >
+      &copy; 2026 Good Homes Official
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

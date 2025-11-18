@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* ===== Root Theme Colors ===== */
+:root {
+  --primary-green: #387034;
+  --light-tan: #EDEAE5;
+  --text-dark: #333333;
+  --findus-color: #785740;
+  --contact-color: #264653;
+}
+
+/* ===== Global ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light-tan);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  background-image: url('/images/outlook.jpg'); /* replace with your image */
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  position: relative;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Navigation ===== */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-green);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active-nav::after {
+  width: 100%;
+}
+.nav-link.active-nav {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+/* ===== Mobile Menu ===== */
+#mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+#mobile-menu.open {
+  transform: translateX(0);
+  z-index: 100;
+}
+
+/* ===== Accommodation Section ===== */
+
+
+/* ===== Amenities & Security ===== */
+.amenity-section {
+  background-color: #f7f5f1;
+  padding: 4rem 2rem;
+}
+.amenity-card {
+  background-color: transparent;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.35s ease;
+  padding: 1.5rem;
+}
+.amenity-card:hover {
+  background-color: rgba(56, 112, 52, 0.05);
+  transform: translateY(-4px);
+}
+.icon-wrapper {
+  background-color: #ecf9ec;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.icon-wrapper i {
+  width: 30px;
+  height: 30px;
+  color: var(--primary-green);
+  transition: transform 0.4s ease;
+}
+.amenity-card:hover .icon-wrapper {
+  background-color: var(--primary-green);
+  transform: scale(1.1);
+}
+.amenity-card:hover .icon-wrapper i {
+  color: #fff;
+  transform: rotate(8deg) scale(1.15);
+}
+
+/* ===== Gallery Hover (Dining + Lounge) ===== */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.gallery-card img {
+  transition: all 0.5s ease;
+  object-fit: cover; 
+  height: 100%;
+}
+.gallery-card div {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  background: rgba(56, 112, 52, 0.8);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  transition: opacity 0.5s ease;
+  font-weight: 500;
+}
+.gallery-card:hover div {
+  opacity: 1;
+}
+.gallery-card:hover img {
+  opacity: 0.2;
+  transform: scale(1.05);
+}
+
+/* ===== Scroll Animations ===== */
+.fade-in-element,
+.slide-in-left,
+.slide-in-right {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Slide Animations for About Section ===== */
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left.is-visible {
+  animation: slideFromLeft 1s ease-out forwards;
+}
+
+.slide-in-right.is-visible {
+  animation: slideFromRight 1s ease-out forwards;
+}
+
+/* ===== Contact Section ===== */
+.find-us {
+  color: var(--findus-color);
+  border-color: var(--findus-color);
+}
+.contact-title,
+.connect-title {
+  color: var(--contact-color);
+  border-color: var(--contact-color);
+}
+
+/* ===== Subtle Shadows (no heavy boxes now) ===== */
+.fade-in-element.is-visible {
+  box-shadow: none;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 60vh;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    height: 55vh;
+  }
+  .amenity-card {
+    padding: 1.25rem;
+  }
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  .icon-wrapper i {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ===== Smooth Transitions for Interactive Items ===== */
+a,
+button,
+.amenity-card,
+.gallery-card img {
+  transition: all 0.3s ease;
+}
+
+/* ===== Scrollbar Style ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-green);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+
+
