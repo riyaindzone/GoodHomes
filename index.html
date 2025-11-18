@@ -49,38 +49,45 @@
     <!-- Header -->
 
     <header class="sticky top-0 z-50 bg-white shadow-lg p-4 md:p-6">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <span
-            class="text-xl md:text-2xl font-bold text-text-dark uppercase tracking-wider"
-            >GOOD HOMES</span
-          >
-
-          <span class="text-xs text-text-dark opacity-80 pt-1 hidden sm:block"
-            >A Luxury PG</span
-          >
-        </div>
-
-        <nav
-          class="hidden md:flex space-x-8 text-sm font-semibold text-text-dark"
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="#home" class="flex items-center space-x-3 group">
+      <img
+        src="images/logo.jpg"
+        alt="Good Homes Logo"
+        class="h-16 md:h-14"
+        id="nav-logo"
+      />
+      <div class="flex items-end space-x-2">
+        <span
+          class="text-xl md:text-2xl font-bold text-text-dark uppercase tracking-wider group-hover:text-primary-green transition duration-300"
+          >GOOD HOMES</span
         >
-          <a href="#home" class="nav-link relative">HOME</a>
-
-          <a href="#about" class="nav-link relative">ABOUT</a>
-
-          <a href="#rooms" class="nav-link relative">ROOMS</a>
-
-          <a href="#contact" class="nav-link relative">CONTACT</a>
-        </nav>
-
-        <button
-          id="mobile-menu-button"
-          class="md:hidden p-2 text-text-dark focus:outline-none"
+        <span
+          class="text-xs text-text-dark opacity-80 pt-1 hidden sm:block group-hover:text-primary-green transition duration-300"
+          >A Luxury PG</span
         >
-          <i data-lucide="menu"></i>
-        </button>
       </div>
-    </header>
+    </a>
+    <nav
+      class="hidden md:flex space-x-8 text-sm font-semibold text-text-dark"
+    >
+      <a href="#home" class="nav-link relative">HOME</a>
+
+      <a href="#about" class="nav-link relative">ABOUT</a>
+
+      <a href="#rooms" class="nav-link relative">ROOMS</a>
+
+      <a href="#contact" class="nav-link relative">CONTACT</a>
+    </nav>
+
+    <button
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-text-dark focus:outline-none"
+    >
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+</header>
 
     <!-- Mobile Menu -->
 
@@ -123,7 +130,7 @@
         <h1
           class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4"
         >
-          Not Just a PG, <br class="md:hidden" />It's a Lifestyle! ✨
+          Not Just a PG, <br class="md:hidden" />It's a Lifestyle!
         </h1>
 
         <a
@@ -193,7 +200,7 @@
             href="#contact"
             class="inline-block mt-4 py-2 px-6 text-lg font-extrabold text-white bg-primary-green rounded-lg shadow-md hover:bg-green-700 transition duration-300"
           >
-            Contact For Pricing
+            Contact Us
           </a>
         </div>
 
@@ -226,7 +233,7 @@
             href="#contact"
             class="inline-block mt-4 py-2 px-6 text-lg font-extrabold text-white bg-primary-green rounded-lg shadow-md hover:bg-green-700 transition duration-300"
           >
-            Contact For Pricing
+            Contact Us
           </a>
         </div>
       </div>
@@ -467,92 +474,183 @@
     <!-- Contact -->
 
     <section
-      id="contact"
-      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28"
-    >
-      <h3
-        class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-8 border-b-2 border-primary-green inline-block pb-1"
+  id="contact"
+  class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28"
+>
+  <h3
+    class="text-xl md:text-2xl font-bold text-primary-green uppercase mb-8 border-b-2 border-primary-green inline-block pb-1"
+  >
+    Contact & Location
+  </h3>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
+    <div class="lg:col-span-1">
+      <h4
+        class="text-lg md:text-xl font-semibold contact-title mb-4 border-b-2 border-[var(--contact-color)] inline-block pb-1"
       >
-        Contact & Location
-      </h3>
+        Send Us a Message
+      </h4>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+      <form class="space-y-4">
         <div>
-          <h4
-            class="text-lg md:text-xl font-semibold find-us mb-2 border-b-2 border-[var(--findus-color)] inline-block pb-1"
+          <label for="name" class="block text-sm font-medium text-text-dark"
+            >Your Name</label
           >
-            Find Us Here
-          </h4>
-
-          <p class="text-text-dark mb-4 mt-2 leading-relaxed">
-            <strong>Good homes,</strong> <br />House no 192, Sector 39, near
-            Medanta Hospital, Gurgaon, <br />
-            Haryana 122001.
-          </p>
-
-          <div class="rounded-xl overflow-hidden shadow-2xl h-64 md:h-80 mt-4">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3508.1703635863896!2d77.04352117549392!3d28.44428037576811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI2JzM5LjQiTiA3N8KwMDInNDYuMCJF!5e0!3m2!1sen!2sin!4v1763354988414!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John Doe"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-2 border"
+          />
         </div>
 
         <div>
-          <h4
-            class="text-lg md:text-xl font-semibold contact-title mb-2 border-b-2 border-[var(--contact-color)] inline-block pb-1"
+          <label for="email" class="block text-sm font-medium text-text-dark"
+            >Email Address</label
           >
-            Get In Touch
-          </h4>
-
-          <p class="ml-0">
-            <a
-              href="tel:+919667942934"
-              class="text-text-dark hover:text-primary-green transition duration-300"
-            >
-              📞 +91-9667942934
-            </a>
-          </p>
-
-          <p class="ml-0">
-            <a
-              href="mailto:hello@goodhomesofficial.com"
-              class="text-text-dark hover:text-primary-green transition duration-300"
-            >
-              📧 hello@goodhomesofficial.com
-            </a>
-          </p>
-
-          <h4
-            class="mt-8 text-lg md:text-xl font-semibold connect-title mb-2 border-b-2 border-[var(--contact-color)] inline-block pb-1"
-          >
-            Connect with Us
-          </h4>
-
-          <p class="ml-0">
-            <a
-              href="https://www.instagram.com/goodhomesofficial"
-              target="_blank"
-              class="text-text-dark hover:text-primary-green transition duration-300"
-            >
-              <i class="fab fa-instagram"></i>
-              @goodhomesofficial
-            </a>
-          </p>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-2 border"
+          />
         </div>
+
+        <div>
+          <label for="interest" class="block text-sm font-medium text-text-dark"
+            >Interested in</label
+          >
+          <select
+            id="interest"
+            name="interest"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-2 border bg-white"
+          >
+            <option value="" disabled selected>Select an option</option>
+            <option value="1rk">1 RK (Room Kitchen)</option>
+            <option value="1bhk">1 BHK (Bedroom, Hall, Kitchen)</option>
+            <option value="general">General Inquiry</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-text-dark"
+            >Your Message</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Tell us about your requirements..."
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-2 border"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-green hover:bg-green-700 transition duration-300"
+        >
+          Submit Inquiry
+        </button>
+      </form>
+    </div>
+
+    <div class="lg:col-span-1">
+      <h4
+        class="text-lg md:text-xl font-semibold find-us mb-4 border-b-2 border-[var(--findus-color)] inline-block pb-1"
+      >
+        Find Our Office
+      </h4>
+
+      <p class="text-text-dark mb-4 mt-2 leading-relaxed">
+        <strong>Good homes,</strong> <br />House no 192, Sector 39, near Medanta
+        Hospital, Gurgaon, <br />
+        Haryana 122001.
+      </p>
+
+      <div class="rounded-xl overflow-hidden shadow-2xl h-60 lg:h-80  mt-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3508.1703635863896!2d77.04352117549392!3d28.44428037576811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI2JzM5LjQiTiA3N8KwMDInNDYuMCJF!5e0!3m2!1sen!2sin!4v1763354988414!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
-    </section>
+    </div>
+
+    <div class="lg:col-span-1">
+      <h4
+        class="text-lg md:text-xl font-semibold contact-title mb-4 border-b-2 border-[var(--contact-color)] inline-block pb-1"
+      >
+        Direct Contact
+      </h4>
+
+      <p class="ml-0 mb-4">
+        <a
+          href="tel:+919667942934"
+          class="text-text-dark hover:text-primary-green transition duration-300 font-medium text-lg"
+        >
+          📞 +91-9667942934
+        </a>
+      </p>
+
+      <p class="ml-0 mb-8">
+        <a
+          href="mailto:hello@goodhomesofficial.com"
+          class="text-text-dark hover:text-primary-green transition duration-300 font-medium text-lg"
+        >
+          📧 hello@goodhomesofficial.com
+        </a>
+      </p>
+
+      <h4
+        class="mt-4 text-lg md:text-xl font-semibold connect-title mb-4 border-b-2 border-[var(--contact-color)] inline-block pb-1"
+      >
+        Connect with Us
+      </h4>
+
+      <p class="ml-0 mb-2">
+        <a
+          href="https://www.instagram.com/goodhomesofficial"
+          target="_blank"
+          class="text-text-dark hover:text-primary-green transition duration-300 inline-flex items-center space-x-2"
+        >
+          <i class="fab fa-instagram"></i>
+          <span>@goodhomesofficial</span>
+        </a>
+      </p>
+
+      <p class="ml-0">
+        <a
+          href="https://www.facebook.com/share/1DqTviWKkQ/"
+          target="_blank"
+          class="text-text-dark hover:text-primary-green transition duration-300 inline-flex items-center space-x-2"
+        >
+          <i class="fab fa-facebook"></i>
+          <span>Good Homes Official</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
 
     <footer
       class="text-center py-6 border-t border-gray-200 text-sm text-gray-500 bg-white"
     >
       &copy; 2026 Good Homes Official
     </footer>
+
+    <a 
+      href="https://wa.me/9667942934" 
+      class="whatsapp-float" 
+      target="_blank"
+    >
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="main.js"></script>
   </body>

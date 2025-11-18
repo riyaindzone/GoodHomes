@@ -64,9 +64,6 @@ body {
   z-index: 100;
 }
 
-/* ===== Accommodation Section ===== */
-
-
 /* ===== Amenities & Security ===== */
 .amenity-section {
   background-color: #f7f5f1;
@@ -197,6 +194,38 @@ body {
   border-color: var(--contact-color);
 }
 
+/* ===== Contact Form Styling (NEW) ===== */
+/* Base style for form inputs, textareas, and selects */
+.space-y-4 input,
+.space-y-4 textarea,
+.space-y-4 select {
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ccc; 
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+    color: var(--text-dark); 
+}
+
+/* Override focus styles to use the defined primary color */
+.space-y-4 input:focus,
+.space-y-4 textarea:focus,
+.space-y-4 select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    /* Creates a subtle green glow ring effect */
+    box-shadow: 0 0 0 3px rgba(56, 112, 52, 0.2); 
+}
+
+/* Style for the submit button */
+.space-y-4 button[type="submit"] {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.space-y-4 button[type="submit"]:hover {
+    /* Slightly darker green on hover for feedback */
+    background-color: #2e5c2b; 
+}
+
+
 /* ===== Subtle Shadows (no heavy boxes now) ===== */
 .fade-in-element.is-visible {
   box-shadow: none;
@@ -225,12 +254,17 @@ body {
   }
 }
 
-/* ===== Smooth Transitions for Interactive Items ===== */
+/* ===== Smooth Transitions for Interactive Items (UPDATED) ===== */
 a,
 button,
 .amenity-card,
 .gallery-card img {
-  transition: all 0.3s ease;
+  /* Use ease-in-out for a smoother feel */
+  transition: all 0.3s ease-in-out;
+}
+/* Ensure link color changes smoothly */
+a {
+    transition: color 0.3s ease-in-out; 
 }
 
 /* ===== Scrollbar Style ===== */
@@ -245,5 +279,41 @@ button,
   background-color: #f4f4f4;
 }
 
+/* Custom CSS for the Logo in the Navbar */
+#nav-logo {
+    /* Ensures the image is a block element and fits the specified height */
+    display: block; 
+    /* Improves image quality rendering for small, scaled images */
+    image-rendering: optimizeQuality;
+}
 
+/* ===== WhatsApp Sticky Button ===== */
+.whatsapp-float {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    bottom: 40px; /* Distance from bottom */
+    right: 40px; /* Distance from right */
+    background-color: #25d366; /* WhatsApp Green */
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it stays above other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
 
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Make icon slightly smaller */
+.whatsapp-float i {
+    font-size: 35px; 
+    line-height: 0; /* Align icon vertically */
+}
