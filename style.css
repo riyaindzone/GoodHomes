@@ -19,7 +19,7 @@ body {
 
 /* ===== Hero Section ===== */
 .hero-section {
-  background-image: url('/images/outlook.jpg'); /* replace with your image */
+  background-image: url('../images/outlook.jpg'); /* replace with your image */
   background-size: cover;
   background-position: center;
   height: 70vh;
