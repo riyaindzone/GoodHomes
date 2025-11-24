@@ -500,7 +500,8 @@
         Send Us a Message
       </h4>
 
-      <form class="space-y-4">
+      <form action="mailer.php" method="POST" class="space-y-4">
+          <input type="hidden" name="formType" value="contact">
         <div>
           <label for="name" class="block text-sm font-medium text-text-dark"
             >Your Name</label
