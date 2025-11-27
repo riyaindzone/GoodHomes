@@ -1,61 +1,59 @@
 <?php
-header('Content-Type: application/json');
 
-// Allow POST only
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+$name     = $_POST['name'] ?? '';
+$phone    = $_POST['phone'] ?? '';
+$interest = $_POST['interest'] ?? '';
+$message  = $_POST['message'] ?? '';
+
+if ($name == "" || $phone == "" || $message == "") {
+    echo "<h2 style='font-family:Arial;color:red;'>Form incomplete. Please go back and try again.</h2>";
     exit;
 }
 
-// Sanitize helper
-function clean($key){
-    return trim(filter_input(INPUT_POST, $key, FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '');
-}
+// Multiple recipients
+$to  = "537riya@gmail.com";
+$to2 = "dparag342@gmail.com";
 
-// Match EXACT HTML form fields
-$name     = clean('name');
-$phone    = clean('phone');
-$interest = clean('interest');
-$message  = clean('message');
+$subject = "Good Homes PG: New Enquiry ($interest)";
 
-// Basic validation
-if ($name === '' || $phone === '' || $interest === '' || $message === '') {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Please fill all required fields.']);
-    exit;
-}
-
-// Receiver email
-$recipient = "537riya@gmail.com";
-
-// Subject
-$emailSubject = "New Website Inquiry - $interest";
-
-// Email body
 $body = "
-<h2>New Website Inquiry</h2>
-<table style='border-collapse:collapse;width:100%;max-width:600px;font-family:Arial;font-size:14px;'>
-    <tr><td style='padding:8px;background:#f7f7f7;width:120px;'>Name</td><td style='padding:8px;'>$name</td></tr>
-    <tr><td style='padding:8px;background:#f7f7f7;'>Phone</td><td style='padding:8px;'>$phone</td></tr>
-    <tr><td style='padding:8px;background:#f7f7f7;'>Interested In</td><td style='padding:8px;'>$interest</td></tr>
-    <tr><td style='padding:8px;background:#f7f7f7;'>Message</td><td style='padding:8px;'>" . nl2br(htmlspecialchars($message)) . "</td></tr>
-    <tr><td style='padding:8px;background:#f7f7f7;'>Date</td><td style='padding:8px;'>" . date('Y-m-d H:i:s') . "</td></tr>
-</table>
+Name: $name
+Phone: $phone
+Interest: $interest
+Message: $message
 ";
 
-// Headers
-$headers  = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: Website Form <no-reply@yourdomain.com>\r\n";
+// From email
+$from = "no-reply@goodhomesofficial.com";
 
-// Send mail
-$sent = @mail($recipient, $emailSubject, $body, $headers);
+// SENDMAIL PATH
+$sendmail = "/usr/sbin/sendmail -t";
 
-if ($sent) {
-    echo json_encode(['success' => true, 'message' => 'Message sent successfully']);
-} else {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Email sending failed on server.']);
-}
+// FIRST EMAIL
+$mail = popen($sendmail, "w");
+fputs($mail, "To: $to\n");
+fputs($mail, "Subject: $subject\n");
+fputs($mail, "From: Good Homes PG <$from>\n");
+fputs($mail, "Content-Type: text/plain; charset=UTF-8\n\n");
+fputs($mail, $body);
+pclose($mail);
+
+// SECOND EMAIL
+$mail2 = popen($sendmail, "w");
+fputs($mail2, "To: $to2\n");
+fputs($mail2, "Subject: $subject\n");
+fputs($mail2, "From: Good Homes PG <$from>\n");
+fputs($mail2, "Content-Type: text/plain; charset=UTF-8\n\n");
+fputs($mail2, $body);
+pclose($mail2);
+
+// Success message
+echo "
+<div style='width:100%;text-align:center;margin-top:80px;font-family:Arial;'>
+    <h1 style='color:green;font-size:32px;'>Thank You! 🎉</h1>
+    <p style='font-size:20px;'>Your enquiry has been submitted successfully.</p>
+    <a href='index.html' style='font-size:18px;color:#007bff;text-decoration:none;'>Go back to Home</a>
+</div>
+";
+exit;
 ?>
